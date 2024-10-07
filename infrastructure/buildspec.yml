@@ -26,5 +26,5 @@ phases:
       - envsubst < appspec_template.yaml > appspec.yaml 
 artifacts:
   files:
-    - './**/*'
-  base-directory: infrastructure
+    - 'infrastructure/*'
+  discard-paths: yes
