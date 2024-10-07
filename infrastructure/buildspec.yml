@@ -28,4 +28,5 @@ artifacts:
   files:
     - 'infrastructure/appspec.yaml'
     - 'infrastructure/taskdef.json*'
+  base-directory: 'infrastructure'
   discard-paths: yes
