@@ -28,6 +28,3 @@ artifacts:
   files:
     - appspec.yaml
     - taskdef.json
-cache:
-  paths:
-    - '/infrastructure/*'
