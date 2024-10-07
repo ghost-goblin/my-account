@@ -26,6 +26,6 @@ phases:
       - envsubst < appspec_template.yaml > appspec.yaml 
 artifacts:
   files:
-    - appspec.yaml
+    - infrastructure/appspec.yaml
     - taskdef.json
   discard-paths: yes
