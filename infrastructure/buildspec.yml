@@ -27,4 +27,3 @@ phases:
 artifacts:
   files:
     - **/*
-  discard-paths: yes
