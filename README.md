@@ -36,5 +36,5 @@ docker push <id>.dkr.ecr.eu-west-2.amazonaws.com/nodejs-express:latest
 ## Run the Image
 
 ```bash
-docker run -d -p 2018:2018 nodejs-express
+docker run -d -p 3000:3000 nodejs-express
 ```
