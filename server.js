@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "./environments/.env.temp" });
 
 const app = express();
+const env = process.env.ENVIRONMENT;
 const port = process.env.APPLICATION_PORT;
 const app_name = process.env.APPLICATION_NAME;
 const secret = process.env.SECRET_01
