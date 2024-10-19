@@ -9,7 +9,7 @@ const app_name = process.env.APPLICATION_NAME;
 const secret = process.env.SECRET_01
 
 app.get("/", (req, res) => {
-  res.send(`"${app_name}" is running on port ${port}! SECRET_01="${secret}"!`);
+  res.send(`"${env}-${app_name}" is running on port ${port}! SECRET="${secret}"!`);
 });
 
 app.listen(port, () => {
