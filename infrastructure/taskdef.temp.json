@@ -11,6 +11,18 @@
                     "protocol": "tcp",
                     "containerPort": 3000
                 }
+            ],
+            "environment": [
+                {
+                    "name": "ENV_VAR_01",
+                    "value": "value"
+                }
+            ],
+            "secrets": [
+                {
+                    "name": "SECRET_01",
+                    "valueFrom": "arn:aws:ssm:$AWS_DEFAULT_REGION:$AWS_ACCOUNT_ID:parameter/$APPLICATION_NAME"
+                }
             ]
         }
     ],
