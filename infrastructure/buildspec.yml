@@ -20,7 +20,8 @@ phases:
       - docker push $REPOSITORY_URI:latest
   post_build:
     commands:
-      - aws ecs describe-task-definition --task-definition $TASK_DEFINITION | jq '.taskDefinition' > taskdef.json
+      - printf '[{"name":"container_name","imageUri":"$REPOSITORY_URI:latest"}]' > imagedefinitions.json
+      - envsubst < infrastructure/taskdef.temp.json > taskdef.json
       - envsubst < infrastructure/appspec_template.yml > appspec.yml 
 artifacts:
   files:
