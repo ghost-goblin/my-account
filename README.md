@@ -10,7 +10,7 @@ node -v
 ## Init NodeJS
 
 ```bash
-cd nodejs-express/app
+cd nodejs-express/
 npm init -y
 ```
 
