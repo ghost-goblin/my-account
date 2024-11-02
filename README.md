@@ -1,9 +1,9 @@
 # NodeJS Express Image
 
 ## Install NodeJS
-
+- Install [Chocolatey](https://chocolatey.org/install)
 ```bash
-choco install nodejs-lts --version="20.17.0"
+choco install nodejs-lts
 node -v
 ```
 
