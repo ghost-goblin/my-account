@@ -24,5 +24,6 @@ phases:
       - envsubst < infrastructure/appspec_template.yml > appspec.yml 
 artifacts:
   files:
+    - imagedefinitions.json
     - appspec.yml
     - taskdef.json
