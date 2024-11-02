@@ -21,8 +21,8 @@ phases:
   post_build:
     commands:
       - printf '[{"name":"container_name","imageUri":"$REPOSITORY_URI:latest"}]' > imagedefinitions.json
-      - envsubst < infrastructure/taskdef.temp.json > taskdef.json
       - envsubst < infrastructure/appspec_template.yml > appspec.yml 
+      - envsubst < infrastructure/taskdef.temp.json > taskdef.json
 artifacts:
   files:
     - imagedefinitions.json
