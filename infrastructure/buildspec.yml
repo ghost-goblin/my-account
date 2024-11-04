@@ -21,8 +21,8 @@ phases:
       - docker push $IMAGE_TAG_LATEST
   post_build:
     commands:
-      - printf $(echo {\"ImageURI\":\"$IMAGE_TAG_LATEST\"}) > imageDetail.json
       - printf $(echo [{\"name\":\"$APPLICATION_NAME\",\"imageUri\":\"$IMAGE_TAG_LATEST\"}]) > imagedefinitions.json
+      - printf $(echo {\"ImageURI\":\"$IMAGE_TAG_LATEST\"}) > imageDetail.json
       - envsubst < infrastructure/appspec_template.yml > appspec.yml 
       - envsubst < infrastructure/taskdef.temp.json > taskdef.json
 artifacts:
