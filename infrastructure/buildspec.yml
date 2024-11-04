@@ -27,6 +27,7 @@ phases:
       - envsubst < infrastructure/taskdef.temp.json > taskdef.json
 artifacts:
   files:
+    # imagedefinitions.json
     - imageDetail.json
     - appspec.yml
     - taskdef.json
