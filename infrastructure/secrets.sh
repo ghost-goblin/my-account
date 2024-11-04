@@ -13,4 +13,4 @@ done
 
 SECRET_LIST=$(echo "${ARRAY[@]}" | sed 's/ /,/g')
 echo $SECRET_LIST
-jq '.containerDefinitions[0].secrets += ['"$SECRET_LIST"']' infrastructure/taskdef.temp.json > taskdef.temp.secrets.json
+jq '.containerDefinitions[0].secrets += ['"$SECRET_LIST"']' infrastructure/taskdef.temp.json > taskdef.secrets.json
