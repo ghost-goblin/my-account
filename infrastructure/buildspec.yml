@@ -11,20 +11,21 @@ phases:
       - aws --version
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - export REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$APPLICATION_NAME
+      - export IMAGE_TAG_LATEST=$REPOSITORY_URI:latest
   build:
     commands:
       - echo Building the Docker image...
       - docker build -t $APPLICATION_NAME .
-      - docker tag $APPLICATION_NAME $REPOSITORY_URI:latest
+      - docker tag $APPLICATION_NAME $IMAGE_TAG_LATEST
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI:latest
+      - docker push $IMAGE_TAG_LATEST
   post_build:
     commands:
-      - printf '[{"name":"container_name","imageUri":"$REPOSITORY_URI:latest"}]' > imagedefinitions.json
+      - printf $(echo {\"ImageURI\":\"$IMAGE_TAG\"}) > imageDetail.json
       - envsubst < infrastructure/appspec_template.yml > appspec.yml 
       - envsubst < infrastructure/taskdef.temp.json > taskdef.json
 artifacts:
   files:
-    - imagedefinitions.json
+    - imageDetail.json
     - appspec.yml
     - taskdef.json
