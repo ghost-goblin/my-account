@@ -16,6 +16,14 @@
                 {
                     "name": "ENVIRONMENT",
                     "value": "dev"
+                },
+                {
+                    "name": "APPLICATION_NAME",
+                    "value": "nodejs-express"
+                } 
+                {
+                    "name": "APPLICATION_PORT",
+                    "value": 3000
                 }
             ],
             "secrets": [
