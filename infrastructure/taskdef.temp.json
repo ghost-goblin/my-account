@@ -14,8 +14,8 @@
             ],
             "environment": [
                 {
-                    "name": "ENV_VAR_01",
-                    "value": "value"
+                    "name": "ENVIRONMENT",
+                    "value": "dev"
                 }
             ],
             "secrets": [
