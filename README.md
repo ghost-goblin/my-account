@@ -1,4 +1,4 @@
-# 🚀 NodeJS Express Boilerplate Image
+# 🚀 NodeJS Express Server Boilerplate Image
 
 ## Install NodeJS
 - Install [Chocolatey](https://chocolatey.org/install)
